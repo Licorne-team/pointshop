@@ -1,6 +1,6 @@
-ITEM.Name = 'Afro'
+ITEM.Name = 'Attention Slippery Mask'
 ITEM.Price = 250
-ITEM.Model = 'models/dav0r/hoverball.mdl'
+ITEM.Model = 'models/props_c17/streetsign005c.mdl'
 ITEM.Attachment = 'eyes'
 
 function ITEM:OnEquip(ply, modifications)
@@ -12,10 +12,9 @@ function ITEM:OnHolster(ply)
 end
 
 function ITEM:ModifyClientsideModel(ply, model, pos, ang)
-	model:SetModelScale(1.6, 0)
-	model:SetMaterial('models/weapons/v_stunbaton/w_shaft01a')
-	pos = pos + (ang:Forward() * -7) + (ang:Up() * 8)
-	ang:RotateAroundAxis(ang:Right(), 90)
+	model:SetModelScale(0.7, 0)
+	pos = pos + (ang:Forward() * 3)
+	ang:RotateAroundAxis(ang:Up(), -90)
 	
 	return model, pos, ang
 end

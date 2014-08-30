@@ -2,21 +2,21 @@ PS.Config = {}
 
 -- Edit below
 
-PS.Config.CommunityName = "My Community"
+PS.Config.CommunityName = "Licorne Team"
 
 PS.Config.DataProvider = 'pdata'
 
 PS.Config.Branch = 'https://raw.github.com/adamdburton/pointshop/master/' -- Master is most stable, used for version checking.
 PS.Config.CheckVersion = true -- Do you want to be notified when a new version of Pointshop is avaliable?
 
-PS.Config.ShopKey = 'F3' -- F1, F2, F3 or F4, or blank to disable
-PS.Config.ShopCommand = 'ps_shop' -- Console command to open the shop, set to blank to disable
-PS.Config.ShopChatCommand = '!shop' -- Chat command to open the shop, set to blank to disable
+PS.Config.ShopKey = 'F4' -- F1, F2, F3 or F4, or blank to disable
+PS.Config.ShopCommand = '' -- Console command to open the shop, set to blank to disable
+PS.Config.ShopChatCommand = '!store' -- Chat command to open the shop, set to blank to disable
 
 PS.Config.NotifyOnJoin = true -- Should players be notified about opening the shop when they spawn?
 
 PS.Config.PointsOverTime = true -- Should players be given points over time?
-PS.Config.PointsOverTimeDelay = 1 -- If so, how many minutes apart?
+PS.Config.PointsOverTimeDelay = 10 -- If so, how many minutes apart?
 PS.Config.PointsOverTimeAmount = 10 -- And if so, how many points to give after the time?
 
 PS.Config.AdminCanAccessAdminTab = true -- Can Admins access the Admin tab?
@@ -35,7 +35,7 @@ PS.Config.CalculateBuyPrice = function(ply, item)
 	-- There are a few examples below, uncomment them to use them.
 	
 	-- Everything half price for admins:
-	-- if ply:IsAdmin() then return math.Round(item.Price * 0.5) end
+	if ply:IsAdmin() then return math.Round(item.Price * 0.5) end
 	
 	-- 25% off for the 'donators' group
 	-- if ply:IsUserGroup('donators') then return math.Round(item.Price * 0.75) end

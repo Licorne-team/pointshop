@@ -17,21 +17,21 @@ function PANEL:DoClick()
 	local points = PS.Config.CalculateBuyPrice(LocalPlayer(), self.Data)
 	
 	if not LocalPlayer():PS_HasItem(self.Data.ID) and not LocalPlayer():PS_HasPoints(points) then
-		notification.AddLegacy("You don't have enough "..PS.Config.PointsName.." for this!", NOTIFY_GENERIC, 5)
+		notification.AddLegacy("Vous n'avez pas assez "..PS.Config.PointsName.." pour ça !", NOTIFY_GENERIC, 5)
 	end
 
 	local menu = DermaMenu(self)
 	
 	if LocalPlayer():PS_HasItem(self.Data.ID) then
 		menu:AddOption('Sell', function()
-			Derma_Query('Are you sure you want to sell ' .. self.Data.Name .. '?', 'Sell Item',
+			Derma_Query('Etes-vous sûr que vous voulez vendre ' .. self.Data.Name .. '?', 'Vendre l\'article',
 				'Yes', function() LocalPlayer():PS_SellItem(self.Data.ID) end,
 				'No', function() end
 			)
 		end)
 	elseif LocalPlayer():PS_HasPoints(points) then
 		menu:AddOption('Buy', function()
-			Derma_Query('Are you sure you want to buy ' .. self.Data.Name .. '?', 'Buy Item',
+			Derma_Query('Etes-vous sûr que vous voulez acheter' .. self.Data.Name .. '?', 'Acheter l\'article',
 				'Yes', function() LocalPlayer():PS_BuyItem(self.Data.ID) end,
 				'No', function() end
 			)

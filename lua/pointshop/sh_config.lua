@@ -2,7 +2,7 @@ PS.Config = {}
 
 -- Edit below
 
-PS.Config.CommunityName = "Licorne Team"
+PS.Config.CommunityName = "Licorne store."
 
 PS.Config.DataProvider = 'pdata'
 
@@ -10,13 +10,13 @@ PS.Config.Branch = 'https://raw.github.com/adamdburton/pointshop/master/' -- Mas
 PS.Config.CheckVersion = true -- Do you want to be notified when a new version of Pointshop is avaliable?
 
 PS.Config.ShopKey = 'F4' -- F1, F2, F3 or F4, or blank to disable
-PS.Config.ShopCommand = '' -- Console command to open the shop, set to blank to disable
+PS.Config.ShopCommand = 'store' -- Console command to open the shop, set to blank to disable
 PS.Config.ShopChatCommand = '!store' -- Chat command to open the shop, set to blank to disable
 
 PS.Config.NotifyOnJoin = true -- Should players be notified about opening the shop when they spawn?
 
 PS.Config.PointsOverTime = true -- Should players be given points over time?
-PS.Config.PointsOverTimeDelay = 10 -- If so, how many minutes apart?
+PS.Config.PointsOverTimeDelay = 5 -- If so, how many minutes apart?
 PS.Config.PointsOverTimeAmount = 10 -- And if so, how many points to give after the time?
 
 PS.Config.AdminCanAccessAdminTab = true -- Can Admins access the Admin tab?

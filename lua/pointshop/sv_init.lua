@@ -40,21 +40,21 @@ net.Receive('PS_SendPoints', function(length, ply)
 	if not other or not IsValid(other) or not other:IsPlayer() then return end
 	if not ply or not IsValid(ply) or not ply:IsPlayer() then return end
 	if not ply:PS_HasPoints(points) then
-		ply:PS_Notify("You can't afford to give away ", points, " of your ", PS.Config.PointsName, ".")
+		ply:PS_Notify("Vous ne pouvez pas donner ", points, " de votre ", PS.Config.PointsName, ".")
 		return
 	end
 
 	ply.PS_LastGavePoints = ply.PS_LastGavePoints or 0
 	if ply.PS_LastGavePoints + 5 > CurTime() then
-		ply:PS_Notify("Slow down! You can't give away points that fast.")
+		ply:PS_Notify("Vous ne pouvez pas donner de points pour le moment veuillez patiente.")
 		return
 	end
 
 	ply:PS_TakePoints(points)
-	ply:PS_Notify("You gave ", other:Nick(), " ", points, " of your ", PS.Config.PointsName, ".")
+	ply:PS_Notify("Vous avez donné à", other:Nick(), " ", points, " de votre ", PS.Config.PointsName, ".")
 		
 	other:PS_GivePoints(points)
-	other:PS_Notify(ply:Nick(), " gave you ", points, " of their ", PS.Config.PointsName, ".")
+	other:PS_Notify(ply:Nick(), " vous a donné ", points, " de son ", PS.Config.PointsName, ".")
 
 	ply.PS_LastGavePoints = CurTime()
 end)
@@ -72,7 +72,7 @@ net.Receive('PS_GivePoints', function(length, ply)
 	
 	if (admin_allowed or super_admin_allowed) and other and points and IsValid(other) and other:IsPlayer() then
 		other:PS_GivePoints(points)
-		other:PS_Notify(ply:Nick(), ' gave you ', points, ' ', PS.Config.PointsName, '.')
+		other:PS_Notify(ply:Nick(), ' vous a donné ', points, ' de son ', PS.Config.PointsName, '.')
 	end
 end)
 
@@ -87,7 +87,7 @@ net.Receive('PS_TakePoints', function(length, ply)
 	
 	if (admin_allowed or super_admin_allowed) and other and points and IsValid(other) and other:IsPlayer() then
 		other:PS_TakePoints(points)
-		other:PS_Notify(ply:Nick(), ' took ', points, ' ', PS.Config.PointsName, ' from you.')
+		other:PS_Notify(ply:Nick(), ' a pris ', points, ' de votre ', PS.Config.PointsName, '.')
 	end
 end)
 
@@ -102,7 +102,7 @@ net.Receive('PS_SetPoints', function(length, ply)
 	
 	if (admin_allowed or super_admin_allowed) and other and points and IsValid(other) and other:IsPlayer() then
 		other:PS_SetPoints(points)
-		other:PS_Notify(ply:Nick(), ' set your ', PS.Config.PointsName, ' to ', points, '.')
+		other:PS_Notify(ply:Nick(), ' a configurer votre ', PS.Config.PointsName, ' à ', points, '.')
 	end
 end)
 
@@ -225,12 +225,12 @@ PS.BuildOutdated = false
 
 local function CompareVersions()
 	if PS.CurrentBuild < PS.LatestBuild then
-		MsgN('PointShop is out of date!')
-		MsgN('Local version: ' .. PS.CurrentBuild .. ', Latest version: ' .. PS.LatestBuild)
+		MsgN('PointShop n'est pas à jour!')
+		MsgN('Version locale: ' .. PS.CurrentBuild .. ', Dernière version: ' .. PS.LatestBuild)
 
 		PS.BuildOutdated = true
 	else
-		MsgN('PointShop is on the latest version.')
+		MsgN('PointShop est à jour.')
 	end
 end
 
@@ -246,7 +246,7 @@ function PS:CheckVersion()
 			CompareVersions()
 		end,
 		function(failCode) -- onFailure
-			MsgN('PointShop couldn\'t check version.')
+			MsgN('PointShop ne peu pas vérifier la version.')
 			MsgN(url, ' returned ', failCode)
 		end
 	)
@@ -257,7 +257,7 @@ end
 function PS:LoadDataProvider()
 	local path = "pointshop/providers/" .. self.Config.DataProvider .. ".lua"
 	if not file.Exists(path, "LUA") then
-		error("Pointshop data provider not found. " .. path)
+		error("Fournisseur de données Pointshop introuvable.. " .. path)
 	end
 
 	PROVIDER = {}

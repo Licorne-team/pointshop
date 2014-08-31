@@ -119,13 +119,13 @@ function PS:LoadItems()
 					include('pointshop/items/' .. category .. '/' .. name)
 					
 					if not ITEM.Name then
-						ErrorNoHalt("[POINTSHOP] Item missing name: " .. category .. '/' .. name .. "\n")
+						ErrorNoHalt("[POINTSHOP] Nom de l'objet manquant: " .. category .. '/' .. name .. "\n")
 						continue
 					elseif not ITEM.Price then
-						ErrorNoHalt("[POINTSHOP] Item missing price: " .. category .. '/' .. name .. "\n")
+						ErrorNoHalt("[POINTSHOP] Prix de l'objet manquant: " .. category .. '/' .. name .. "\n")
 						continue
 					elseif not ITEM.Model and not ITEM.Material then
-						ErrorNoHalt("[POINTSHOP] Item missing model or material: " .. category .. '/' .. name .. "\n")
+						ErrorNoHalt("[POINTSHOP] Des éléments sont manquant comme des modèles ou des matériaux: " .. category .. '/' .. name .. "\n")
 						continue
 					end
 					

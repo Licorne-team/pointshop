@@ -1,4 +1,4 @@
-ITEM.Name = 'Headcrab Hat'
+ITEM.Name = 'Headcrab - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/headcrabclassic.mdl'
 ITEM.Attachment = 'eyes'

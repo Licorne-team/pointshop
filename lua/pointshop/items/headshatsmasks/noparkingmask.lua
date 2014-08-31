@@ -1,4 +1,4 @@
-ITEM.Name = 'No Parking Mask'
+ITEM.Name = 'Pas de stationnement - Masque'
 ITEM.Price = 250
 ITEM.Model = 'models/props_c17/streetsign004e.mdl'
 ITEM.Attachment = 'eyes'

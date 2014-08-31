@@ -1,4 +1,4 @@
-ITEM.Name = 'Bucket Hat'
+ITEM.Name = 'Seau - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/props_junk/MetalBucket01a.mdl'
 ITEM.Attachment = 'eyes'

@@ -1,4 +1,4 @@
-ITEM.Name = 'Pan Hat'
+ITEM.Name = 'Casserole - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/props_interiors/pot02a.mdl'
 ITEM.Attachment = 'eyes'

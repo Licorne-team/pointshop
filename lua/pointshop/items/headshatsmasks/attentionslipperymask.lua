@@ -1,4 +1,4 @@
-ITEM.Name = 'Attention Slippery Mask'
+ITEM.Name = 'Sol glissant - Masque'
 ITEM.Price = 250
 ITEM.Model = 'models/props_c17/streetsign005c.mdl'
 ITEM.Attachment = 'eyes'

@@ -1,4 +1,4 @@
-ITEM.Name = 'Skull Head'
+ITEM.Name = 'Crâne - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/Gibs/HGIBS.mdl'
 ITEM.Attachment = 'eyes'

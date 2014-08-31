@@ -1,4 +1,4 @@
-ITEM.Name = 'Bus Only Mask'
+ITEM.Name = 'Arrêt de bus - Masque'
 ITEM.Price = 250
 ITEM.Model = 'models/props_c17/streetsign003b.mdl'
 ITEM.Attachment = 'eyes'

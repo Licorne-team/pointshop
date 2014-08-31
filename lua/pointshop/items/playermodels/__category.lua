@@ -1,2 +1,2 @@
-CATEGORY.Name = 'Player Models'
+CATEGORY.Name = 'Modèles pour joueurs'
 CATEGORY.Icon = 'user'

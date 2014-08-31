@@ -1,4 +1,4 @@
-ITEM.Name = 'Turtle Hat'
+ITEM.Name = 'Tortue - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/props/de_tides/Vending_turtle.mdl'
 ITEM.Attachment = 'eyes'

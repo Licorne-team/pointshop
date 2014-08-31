@@ -43,34 +43,34 @@ function Player:PS_PlayerInitialSpawn()
 		if PS.Config.ShopKey ~= '' then
 			timer.Simple(5, function() -- Give them time to load up
 				if !IsValid(self) then return end
-				self:PS_Notify('Appuie sur ' .. PS.Config.ShopKey .. ' pour ouvrir le store !')
+				self:PS_Notify('Appuyez sur ' .. PS.Config.ShopKey .. ' pour ouvrir le PointShop !')
 			end)
 		end
 		
 		if PS.Config.ShopCommand ~= '' then
 			timer.Simple(5, function() -- Give them time to load up
 				if !IsValid(self) then return end
-				self:PS_Notify('Tape ' .. PS.Config.ShopCommand .. ' dans la console pour ouvrir le store !')
+				self:PS_Notify('Tapez ' .. PS.Config.ShopCommand .. ' dans la console pour ouvrir le PointShop !')
 			end)
 		end
 		
 		if PS.Config.ShopChatCommand ~= '' then
 			timer.Simple(5, function() -- Give them time to load up
 				if !IsValid(self) then return end
-				self:PS_Notify('Tape ' .. PS.Config.ShopChatCommand .. ' dans le tchat pour ouvrir le store !')
+				self:PS_Notify('Tapez ' .. PS.Config.ShopChatCommand .. ' dans le chat pour ouvrir le PointShop !')
 			end)
 		end
 		
 		timer.Simple(10, function() -- Give them time to load up
 			if !IsValid(self) then return end
-			self:PS_Notify('Vous avez ' .. self:PS_GetPoints() .. ' ' .. PS.Config.PointsName .. ' à dépenser !')
+			self:PS_Notify('Vous avez ' .. self:PS_GetPoints() .. ' ' .. PS.Config.PointsName .. ' !')
 		end)
 	end
 
 	if PS.Config.CheckVersion and PS.BuildOutdated and self:IsAdmin() then
 		timer.Simple(5, function()
 			if !IsValid(self) then return end
-			self:PS_Notify("PointShop n'est pas à jour, s'il vous plaît dites le propriétaire du serveur!")
+			self:PS_Notify("PointShop n'est pas à jour. N'hésitez pas à le dire à un admin dès qu'il y en a un !")
 		end)
 	end
 	
@@ -78,7 +78,7 @@ function Player:PS_PlayerInitialSpawn()
 		timer.Create('PS_PointsOverTime_' .. self:UniqueID(), PS.Config.PointsOverTimeDelay * 60, 0, function()
 			if !IsValid(self) then return end
 			self:PS_GivePoints(PS.Config.PointsOverTimeAmount)
-			self:PS_Notify("Vous avez reçu ", PS.Config.PointsOverTimeAmount, " ", PS.Config.PointsName, " dans le store !")
+			self:PS_Notify("Vous recevez ", PS.Config.PointsOverTimeAmount, " ", PS.Config.PointsName, " !")
 		end)
 	end
 end
@@ -118,7 +118,7 @@ function Player:PS_CanPerformAction(itemname)
 	
 	
 	if not allowed then
-		self:PS_Notify('Vous ne n\'êtes pas autorisé à le faire en ce moment!')
+		self:PS_Notify('Vous n\'êtes pas autorisé à faire ceci en ce moment !')
 	end
 	
 	return allowed
@@ -191,13 +191,13 @@ function Player:PS_BuyItem(item_id)
 	if not self:PS_CanPerformAction(item_id) then return end
 	
 	if ITEM.AdminOnly and not self:IsAdmin() then
-		self:PS_Notify('Cat objet est réservé au admins !')
+		self:PS_Notify('Cet item est reservé aux admins')
 		return false
 	end
 	
 	if ITEM.AllowedUserGroups and #ITEM.AllowedUserGroups > 0 then
 		if not table.HasValue(ITEM.AllowedUserGroups, self:PS_GetUsergroup()) then
-			self:PS_Notify('Vous n\'êtes pas dans le bon groupe pour acheter cette objet !')
+			self:PS_Notify('Vous n\'êtes pas dans le bon groupe pour acheter cet item !')
 			return false
 		end
 	end
@@ -207,14 +207,14 @@ function Player:PS_BuyItem(item_id)
 	
 	if CATEGORY.AllowedUserGroups and #CATEGORY.AllowedUserGroups > 0 then
 		if not table.HasValue(CATEGORY.AllowedUserGroups, self:PS_GetUsergroup()) then
-			self:PS_Notify('Vous n\'êtes pas dans le bon groupe pour acheter cette objet !')
+			self:PS_Notify('Vous n\'êtes pas dans le bon groupe pour acheter cet item !')
 			return false
 		end
 	end
 	
 	if CATEGORY.CanPlayerSee then
 		if not CATEGORY:CanPlayerSee(self) then
-			self:PS_Notify('Vous n\'êtes pas autorisé à acheter cette objet !')
+			self:PS_Notify('Vous n\'êtes pas autorisé à acheter cet item !')
 			return false
 		end
 	end
@@ -228,19 +228,19 @@ function Player:PS_BuyItem(item_id)
 		end
 		
 		if not allowed then
-			self:PS_Notify(message or 'Vous n\'êtes pas autorisé à acheter cet objet !')
+			self:PS_Notify(message or 'Vous n\'êtes pas autorisé à acheter cet item !')
 			return false
 		end
 	end
 	
 	self:PS_TakePoints(points)
 	
-	self:PS_Notify('Acheté ', ITEM.Name, ' pour ', points, ' ', PS.Config.PointsName)
+	self:PS_Notify('Vous avez acheté ', ITEM.Name, ' pour ', points, ' ', PS.Config.PointsName)
 	
 	ITEM:OnBuy(self)
 	
 	if ITEM.SingleUse then
-		self:PS_Notify('Cette objet ne peu être ahcetés qu\'une seul fois par parite !')
+		self:PS_Notify('Item à usage unique. Vous devrez acheter cet item la prochaine fois !')
 		return
 	end
 
@@ -263,7 +263,7 @@ function Player:PS_SellItem(item_id)
 		end
 		
 		if not allowed then
-			self:PS_Notify(message or 'Vous n\'êtes pas autorisé à vendre cet objet !')
+			self:PS_Notify(message or 'Vous n\'êtes pas autorisé à vendre cet item !')
 			return false
 		end
 	end
@@ -274,7 +274,7 @@ function Player:PS_SellItem(item_id)
 	ITEM:OnHolster(self)
 	ITEM:OnSell(self)
 	
-	self:PS_Notify('Vendu ', ITEM.Name, ' pour ', points, ' ', PS.Config.PointsName)
+	self:PS_Notify('Vous avez vendu ', ITEM.Name, ' pour ', points, ' ', PS.Config.PointsName)
 	
 	return self:PS_TakeItem(item_id)
 end
@@ -318,7 +318,7 @@ function Player:PS_EquipItem(item_id)
 	end
 	
 	if not allowed then
-		self:PS_Notify(message or 'Vous n\'êtes pas autorisé à équiper cet objet !')
+		self:PS_Notify(message or 'Vous n\'êtes pas autorisé à vous équiper de cet item !')
 		return false
 	end
 	
@@ -327,7 +327,7 @@ function Player:PS_EquipItem(item_id)
 	
 	if CATEGORY and CATEGORY.AllowedEquipped > -1 then
 		if self:PS_NumItemsEquippedFromCategory(cat_name) + 1 > CATEGORY.AllowedEquipped then
-			self:PS_Notify('Seulement ' .. CATEGORY.AllowedEquipped .. ' objet' .. (CATEGORY.AllowedEquipped == 1 and '' or 's') .. ' peut être équipé de cette catégorie !')
+			self:PS_Notify('Only ' .. CATEGORY.AllowedEquipped .. ' item' .. (CATEGORY.AllowedEquipped == 1 and '' or 's') .. ' can be equipped from this category!')
 			return false
 		end
 	end
@@ -355,7 +355,7 @@ function Player:PS_EquipItem(item_id)
 				if SharedCategory == CATEGORY.Name then
 					if Cat.AllowedEquipped > -1 and CATEGORY.AllowedEquipped > -1 then
 						if NumEquipped(self,CatName) + NumEquipped(self,CATEGORY.Name) + 1 > Cat.AllowedEquipped then
-							self:PS_Notify('Seulment ' .. Cat.AllowedEquipped .. ' objet'.. (Cat.AllowedEquipped == 1 and '' or 's') ..' peut être équipé de cette catégorie ! ' .. ConCatCats .. '!')
+							self:PS_Notify('Only ' .. Cat.AllowedEquipped .. ' item'.. (Cat.AllowedEquipped == 1 and '' or 's') ..' can be equipped over ' .. ConCatCats .. '!')
 							return false
 						end
 					end
@@ -368,7 +368,7 @@ function Player:PS_EquipItem(item_id)
 	
 	ITEM:OnEquip(self, self.PS_Items[item_id].Modifiers)
 	
-	self:PS_Notify('', ITEM.Name, 'équipée.')
+	self:PS_Notify('Vous vous êtes équipé de ', ITEM.Name, '.')
 
 	PS:SavePlayerItem(self, item_id, self.PS_Items[item_id])
 	
@@ -391,13 +391,13 @@ function Player:PS_HolsterItem(item_id)
 	end
 	
 	if not allowed then
-		self:PS_Notify(message or 'Vous n\'êtes pas autorisé à rengainer cet objet!')
+		self:PS_Notify(message or 'Vous n\'êtes pas autorsié à vous deséquiper de cet item !')
 		return false
 	end
 	
 	ITEM:OnHolster(self)
 	
-	self:PS_Notify(' ', ITEM.Name, ' retiret.')
+	self:PS_Notify('Vous vous êtes déséquipé de ', ITEM.Name, '.')
 
 	PS:SavePlayerItem(self, item_id, self.PS_Items[item_id])
 	

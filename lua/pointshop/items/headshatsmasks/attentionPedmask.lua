@@ -1,4 +1,4 @@
-ITEM.Name = 'Attention Ped Mask'
+ITEM.Name = 'Passage piéton - Masque'
 ITEM.Price = 250
 ITEM.Model = 'models/props_c17/streetsign005b.mdl'
 ITEM.Attachment = 'eyes'

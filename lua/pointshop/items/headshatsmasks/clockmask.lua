@@ -1,4 +1,4 @@
-ITEM.Name = 'Clock Mask'
+ITEM.Name = 'Horloge - Masque'
 ITEM.Price = 250
 ITEM.Model = 'models/props_c17/clock01.mdl'
 ITEM.Attachment = 'eyes'

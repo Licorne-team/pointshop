@@ -1,7 +1,7 @@
 local PANEL = {}
 
 function PANEL:Init()
-	self:SetTitle("PointShop Color Chooser")
+	self:SetTitle("Choisir une couleur")
 	self:SetSize(300, 300)
 	
 	self:SetBackgroundBlur(true)
@@ -15,7 +15,7 @@ function PANEL:Init()
 	done:DockMargin(0, 5, 0, 0)
 	done:Dock(BOTTOM)
 	
-	done:SetText('Done')
+	done:SetText('Terminé')
 	
 	done.DoClick = function()
 		self.OnChoose(self.colorpicker:GetColor())

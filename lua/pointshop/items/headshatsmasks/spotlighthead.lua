@@ -1,4 +1,4 @@
-ITEM.Name = 'Spotlight Head'
+ITEM.Name = 'Projecteur - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/props_wasteland/light_spotlight01_lamp.mdl'
 ITEM.Attachment = 'eyes'

@@ -1,4 +1,4 @@
-ITEM.Name = 'Cone Hat'
+ITEM.Name = 'Cône - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/props_junk/TrafficCone001a.mdl'
 ITEM.Attachment = 'eyes'

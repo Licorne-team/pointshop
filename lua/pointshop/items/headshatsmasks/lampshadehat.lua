@@ -1,4 +1,4 @@
-ITEM.Name = 'Lampshade Hat'
+ITEM.Name = 'Abat-jour - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/props_c17/lampShade001a.mdl'
 ITEM.Attachment = 'eyes'

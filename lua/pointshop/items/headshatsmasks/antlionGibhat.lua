@@ -1,4 +1,4 @@
-ITEM.Name = 'Antlion gib Hat'
+ITEM.Name = 'Antlion gib - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/Gibs/Antlion_gib_Large_2.mdl'
 ITEM.Attachment = 'eyes'

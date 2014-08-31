@@ -2,7 +2,7 @@ PS.Config = {}
 
 -- Edit below
 
-PS.Config.CommunityName = "Licorne store."
+PS.Config.CommunityName = "Licorne Team"
 
 PS.Config.DataProvider = 'pdata'
 

@@ -1,4 +1,4 @@
-ITEM.Name = 'Combine Police'
+ITEM.Name = 'Metro Police'
 ITEM.Price = 500
 ITEM.Model = 'models/player/police.mdl'
 

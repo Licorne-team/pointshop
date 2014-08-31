@@ -1,4 +1,4 @@
-ITEM.Name = 'TeaPot Hat'
+ITEM.Name = 'Théière - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/props_interiors/pot01a.mdl'
 ITEM.Attachment = 'eyes'

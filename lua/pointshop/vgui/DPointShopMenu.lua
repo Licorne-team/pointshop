@@ -273,7 +273,7 @@ function PANEL:Init()
 		ClientsList:Dock(FILL)
 		
 		ClientsList:SetMultiSelect(false)
-		ClientsList:AddColumn('Name')
+		ClientsList:AddColumn('Pseudo')
 		ClientsList:AddColumn('Points'):SetFixedWidth(60)
 		ClientsList:AddColumn('Items'):SetFixedWidth(60)
 		
@@ -282,10 +282,10 @@ function PANEL:Init()
 			
 			local menu = DermaMenu()
 			
-			menu:AddOption('Set '..PS.Config.PointsName..'...', function()
+			menu:AddOption('Changer les '..PS.Config.PointsName..'...', function()
 				Derma_StringRequest(
-					"Set "..PS.Config.PointsName.." for " .. ply:GetName(),
-					"Set "..PS.Config.PointsName.." to...",
+					"Changer les "..PS.Config.PointsName.." pour " .. ply:GetName(),
+					"Changer les "..PS.Config.PointsName.." à...",
 					"",
 					function(str)
 						if not str or not tonumber(str) then return end
@@ -298,10 +298,10 @@ function PANEL:Init()
 				)
 			end)
 			
-			menu:AddOption('Give '..PS.Config.PointsName..'...', function()
+			menu:AddOption('Donner des '..PS.Config.PointsName..'...', function()
 				Derma_StringRequest(
-					"Give "..PS.Config.PointsName.." to " .. ply:GetName(),
-					"Give "..PS.Config.PointsName.."...",
+					"Donner des "..PS.Config.PointsName.." à " .. ply:GetName(),
+					"Donner des "..PS.Config.PointsName.."...",
 					"",
 					function(str)
 						if not str or not tonumber(str) then return end
@@ -314,10 +314,10 @@ function PANEL:Init()
 				)
 			end)
 			
-			menu:AddOption('Take '..PS.Config.PointsName..'...', function()
+			menu:AddOption('Prendre des '..PS.Config.PointsName..'...', function()
 				Derma_StringRequest(
-					"Take "..PS.Config.PointsName.." from " .. ply:GetName(),
-					"Take "..PS.Config.PointsName.."...",
+					"Prendre des "..PS.Config.PointsName.." de " .. ply:GetName(),
+					"Prendre des "..PS.Config.PointsName.."...",
 					"",
 					function(str)
 						if not str or not tonumber(str) then return end
@@ -332,14 +332,14 @@ function PANEL:Init()
 			
 			menu:AddSpacer()
 			
-			BuildItemMenu(menu:AddSubMenu('Give Item'), ply, UNOWNED_ITEMS, function(item_id)
+			BuildItemMenu(menu:AddSubMenu('Donnez un item'), ply, UNOWNED_ITEMS, function(item_id)
 				net.Start('PS_GiveItem')
 					net.WriteEntity(ply)
 					net.WriteString(item_id)
 				net.SendToServer()
 			end)
 			
-			BuildItemMenu(menu:AddSubMenu('Take Item'), ply, OWNED_ITEMS, function(item_id)
+			BuildItemMenu(menu:AddSubMenu('Prendre un item'), ply, OWNED_ITEMS, function(item_id)
 				net.Start('PS_TakeItem')
 					net.WriteEntity(ply)
 					net.WriteString(item_id)
@@ -371,7 +371,7 @@ function PANEL:Init()
 	
 	if PS.Config.CanPlayersGivePoints then
 		local givebutton = vgui.Create('DButton', preview or self)
-		givebutton:SetText("Give "..PS.Config.PointsName)
+		givebutton:SetText("Donner des "..PS.Config.PointsName)
 		if PS.Config.DisplayPreviewInMenu then
 			givebutton:DockMargin(8, 8, 8, 8)
 		else
@@ -432,7 +432,7 @@ function PANEL:Paint(w, h)
 		draw.SimpleText("PointShop", 'PS_LargeTitle', 16, 8, color_white)
 	end
 
-	draw.SimpleText('You have ' .. LocalPlayer():PS_GetPoints() .. ' ' .. PS.Config.PointsName, 'PS_Heading3', self:GetWide() - 40, 24, color_white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER)
+	draw.SimpleText('Vous avez ' .. LocalPlayer():PS_GetPoints() .. ' ' .. PS.Config.PointsName, 'PS_Heading3', self:GetWide() - 40, 24, color_white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER)
 	
 end
 

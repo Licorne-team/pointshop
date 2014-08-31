@@ -1,4 +1,4 @@
-ITEM.Name = 'Limit 30 mph Mask'
+ITEM.Name = 'Autorisation 30 MPH - Masque'
 ITEM.Price = 250
 ITEM.Model = 'models/props_c17/streetsign002b.mdl'
 ITEM.Attachment = 'eyes'

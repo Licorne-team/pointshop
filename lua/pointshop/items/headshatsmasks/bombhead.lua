@@ -1,4 +1,4 @@
-ITEM.Name = 'Bomb Head'
+ITEM.Name = 'Bombe - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/Combine_Helicopter/helicopter_bomb01.mdl'
 ITEM.Attachment = 'eyes'

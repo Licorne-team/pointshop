@@ -1,4 +1,4 @@
-ITEM.Name = 'FlowerPot Hat'
+ITEM.Name = 'Pot pour fleur - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/props_junk/terracotta01.mdl'
 ITEM.Attachment = 'eyes'

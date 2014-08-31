@@ -1,4 +1,4 @@
-ITEM.Name = 'Globe Hat'
+ITEM.Name = 'Globe - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/props_combine/breenglobe.mdl'
 ITEM.Attachment = 'eyes'

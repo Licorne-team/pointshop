@@ -1,4 +1,4 @@
-ITEM.Name = 'Attention Landslide Mask'
+ITEM.Name = 'Eboulement - Masque'
 ITEM.Price = 250
 ITEM.Model = 'models/props_c17/streetsign005d.mdl'
 ITEM.Attachment = 'eyes'

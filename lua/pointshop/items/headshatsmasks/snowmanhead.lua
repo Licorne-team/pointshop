@@ -1,4 +1,4 @@
-ITEM.Name = 'Snowman Head'
+ITEM.Name = 'Bonhomme de neige - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/props/cs_office/Snowman_face.mdl'
 ITEM.Attachment = 'eyes'

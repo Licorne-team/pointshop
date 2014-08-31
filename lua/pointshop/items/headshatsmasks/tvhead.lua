@@ -1,4 +1,4 @@
-ITEM.Name = 'TV Head'
+ITEM.Name = 'Télévision - Chapeau'
 ITEM.Price = 250
 ITEM.Model = 'models/props_c17/tv_monitor01.mdl'
 ITEM.Attachment = 'eyes'

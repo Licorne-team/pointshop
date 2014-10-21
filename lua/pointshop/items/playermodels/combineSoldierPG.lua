@@ -1,5 +1,5 @@
 ITEM.Name = 'CS - Prison Guard'
-ITEM.Price = 500
+ITEM.Price = 250
 ITEM.Model = 'models/player/combine_soldier_prisonguard.mdl'
 
 function ITEM:OnEquip(ply, modifications)

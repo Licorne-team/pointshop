@@ -1,7 +1,6 @@
-ITEM.Name = 'Red'
+ITEM.Name = 'Perso Mass Effect'
 ITEM.Price = 500
-ITEM.Model = 'models/player/red/red.mdl'
-ITEM.AdminOnly = true
+ITEM.Model = 'models/player/masseffect.mdl'
 
 function ITEM:OnEquip(ply, modifications)
 	if not ply._OldModel then
@@ -20,3 +19,10 @@ end
 function ITEM:PlayerSetModel(ply)
 	ply:SetModel(self.Model)
 end
+
+if (SERVER) then
+	player_manager.AddValidModel( "masseffect", "models/player/masseffect.mdl" )
+	AddCSLuaFile( "masseffect.lua" )
+end
+
+list.Set( "PlayerOptionsModel",  "masseffect", "models/player/masseffect.mdl" )

@@ -1,6 +1,6 @@
-ITEM.Name = 'Father Grigori'
-ITEM.Price = 250
-ITEM.Model = 'models/player/monk.mdl'
+ITEM.Name = 'Tesla Power'
+ITEM.Price = 1111
+ITEM.Model = 'models/player/teslapower.mdl'
 
 function ITEM:OnEquip(ply, modifications)
 	if not ply._OldModel then
@@ -19,3 +19,10 @@ end
 function ITEM:PlayerSetModel(ply)
 	ply:SetModel(self.Model)
 end
+
+if (SERVER) then
+	player_manager.AddValidModel( "teslapower", "models/player/teslapower.mdl" )
+	AddCSLuaFile( "teslapower.lua" )
+end
+
+list.Set( "PlayerOptionsModel",  "teslapower", "models/player/teslapower.mdl" )

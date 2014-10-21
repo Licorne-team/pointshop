@@ -1,5 +1,5 @@
 ITEM.Name = 'Combine Soldier (CS)'
-ITEM.Price = 500
+ITEM.Price = 250
 ITEM.Model = 'models/player/combine_soldier.mdl'
 
 function ITEM:OnEquip(ply, modifications)

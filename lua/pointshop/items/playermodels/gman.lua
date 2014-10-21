@@ -1,5 +1,5 @@
 ITEM.Name = 'G Man'
-ITEM.Price = 500
+ITEM.Price = 250
 ITEM.Model = 'models/player/gman_high.mdl'
 
 function ITEM:OnEquip(ply, modifications)

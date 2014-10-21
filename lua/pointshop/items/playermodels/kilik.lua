@@ -1,6 +1,6 @@
-ITEM.Name = 'Father Grigori'
-ITEM.Price = 250
-ITEM.Model = 'models/player/monk.mdl'
+ITEM.Name = 'Kilik'
+ITEM.Price = 800
+ITEM.Model = 'models/player/hhp227/kilik.mdl'
 
 function ITEM:OnEquip(ply, modifications)
 	if not ply._OldModel then
@@ -19,3 +19,10 @@ end
 function ITEM:PlayerSetModel(ply)
 	ply:SetModel(self.Model)
 end
+
+if (SERVER) then
+	player_manager.AddValidModel( "kilik", "models/player/hhp227/kilik.mdl" )
+	AddCSLuaFile( "kilik.lua" )
+end
+
+list.Set( "PlayerOptionsModel",  "kilik", "models/player/hhp227/kilik.mdl" )

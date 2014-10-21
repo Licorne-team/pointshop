@@ -1,6 +1,6 @@
-ITEM.Name = 'Programme anonyme'
+ITEM.Name = 'Jack Skellington'
 ITEM.Price = 500
-ITEM.Model = 'models/player/anon/anon.mdl'
+ITEM.Model = 'models/vinrax/player/jack_player.mdl'
 
 function ITEM:OnEquip(ply, modifications)
 	if not ply._OldModel then
@@ -19,3 +19,10 @@ end
 function ITEM:PlayerSetModel(ply)
 	ply:SetModel(self.Model)
 end
+
+if (SERVER) then
+	player_manager.AddValidModel( "jack_player", "models/vinrax/player/jack_player.mdl" )
+	AddCSLuaFile( "jack_player.lua" )
+end
+
+list.Set( "PlayerOptionsModel",  "jack_player", "models/vinrax/player/jack_player.mdl" )

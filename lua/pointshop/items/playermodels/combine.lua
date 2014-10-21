@@ -1,5 +1,5 @@
 ITEM.Name = 'Metro Police'
-ITEM.Price = 500
+ITEM.Price = 250
 ITEM.Model = 'models/player/police.mdl'
 
 function ITEM:OnEquip(ply, modifications)

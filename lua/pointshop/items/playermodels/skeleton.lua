@@ -1,6 +1,7 @@
 ITEM.Name = 'Skeleton'
 ITEM.Price = 50
 ITEM.Model = 'models/player/skeleton.mdl'
+ITEM.Halloween = true
 
 function ITEM:OnEquip(ply, modifications)
 	if not ply._OldModel then

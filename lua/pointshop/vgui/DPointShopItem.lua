@@ -1,6 +1,7 @@
 local PANEL = {}
 
 local adminicon = Material("icon16/shield.png")
+local halloweenicon = Material("materials/icons/halloween.png")
 local equippedicon = Material("icon16/eye.png")
 local groupicon = Material("icon16/group.png")
 
@@ -163,6 +164,12 @@ end
 function PANEL:PaintOver()
 	if self.Data.AdminOnly then
 		surface.SetMaterial(adminicon)
+		surface.SetDrawColor(Color(255, 255, 255, 255))
+		surface.DrawTexturedRect(5, 5, 16, 16)
+	end
+
+	if self.Data.Halloween then
+		surface.SetMaterial(halloweenicon)
 		surface.SetDrawColor(Color(255, 255, 255, 255))
 		surface.DrawTexturedRect(5, 5, 16, 16)
 	end

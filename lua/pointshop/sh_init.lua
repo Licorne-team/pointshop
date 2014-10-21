@@ -96,6 +96,8 @@ function PS:LoadItems()
 					
 					-- model and material are missing but there's no way around it, there's a check below anyway
 					
+					ITEM.Halloween = false
+					
 					ITEM.AdminOnly = false
 					ITEM.AllowedUserGroups = {} -- this will fail the #ITEM.AllowedUserGroups test and continue
 					ITEM.SingleUse = false

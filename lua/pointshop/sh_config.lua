@@ -2,30 +2,30 @@ PS.Config = {}
 
 -- Edit below
 
-PS.Config.CommunityName = "Licorne Team"
+PS.Config.CommunityName = "multigaming.community"
 
 PS.Config.DataProvider = 'pdata'
 
 PS.Config.Branch = 'https://raw.github.com/adamdburton/pointshop/master/' -- Master is most stable, used for version checking.
 PS.Config.CheckVersion = true -- Do you want to be notified when a new version of Pointshop is avaliable?
 
-PS.Config.ShopKey = 'F4' -- F1, F2, F3 or F4, or blank to disable
-PS.Config.ShopCommand = 'store' -- Console command to open the shop, set to blank to disable
-PS.Config.ShopChatCommand = '!store' -- Chat command to open the shop, set to blank to disable
+PS.Config.ShopKey = 'F2' -- F1, F2, F3 or F4, or blank to disable
+PS.Config.ShopCommand = 'shop' -- Console command to open the shop, set to blank to disable
+PS.Config.ShopChatCommand = '!shop' -- Chat command to open the shop, set to blank to disable
 
-PS.Config.NotifyOnJoin = true -- Should players be notified about opening the shop when they spawn?
+PS.Config.NotifyOnJoin = false -- Should players be notified about opening the shop when they spawn?
 
 PS.Config.PointsOverTime = true -- Should players be given points over time?
 PS.Config.PointsOverTimeDelay = 5 -- If so, how many minutes apart?
 PS.Config.PointsOverTimeAmount = 10 -- And if so, how many points to give after the time?
 
-PS.Config.AdminCanAccessAdminTab = true -- Can Admins access the Admin tab?
+PS.Config.AdminCanAccessAdminTab = false -- Can Admins access the Admin tab?
 PS.Config.SuperAdminCanAccessAdminTab = true -- Can SuperAdmins access the Admin tab?
 
 PS.Config.CanPlayersGivePoints = true -- Can players give points away to other players?
 PS.Config.DisplayPreviewInMenu = true -- Can players see the preview of their items in the menu?
 
-PS.Config.PointsName = 'Points' -- What are the points called?
+PS.Config.PointsName = 'mgcoin' -- What are the points called?
 PS.Config.SortItemsBy = 'Price' -- How are items sorted? Set to 'Price' to sort by price.
 
 -- Edit below if you know what you're doing

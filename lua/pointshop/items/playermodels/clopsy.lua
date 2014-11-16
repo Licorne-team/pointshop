@@ -21,6 +21,10 @@ function ITEM:PlayerSetModel(ply)
 	ply:SetModel(self.Model)
 end
 
+function ITEM:CanPlayerBuy(ply)
+	return false
+end
+
 if (SERVER) then
 	player_manager.AddValidModel( "clopsy", "models/player/clopsy.mdl" )
 	AddCSLuaFile( "clopsy.lua" )
